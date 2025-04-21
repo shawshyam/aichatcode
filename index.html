@@ -5,6 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AICHATCODE</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Rubik:wght@400;600&display=swap');
 
@@ -158,7 +161,8 @@
   </div>
 
   <div class="slide">
-    <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start;">
+    <div class="container"
+      style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start;">
       <div style="flex: 1; min-width: 250px; text-align: left; color: #fff;">
         <h1>Contents</h1>
         <ol style="line-height: 1.5; font-size: 1.1rem;">
@@ -180,7 +184,8 @@
         </ol>
       </div>
       <div style="flex: 1; min-width: 250px; display: flex; justify-content: center;">
-        <div style="width: 250px; height: 500px; border: 6px solid #fff; border-radius: 40px; padding: 20px 10px; background-color: #000; box-shadow: 0 0 20px #00f6ff inset; display: flex; align-items: flex-start; justify-content: flex-start;">
+        <div
+          style="width: 250px; height: 500px; border: 6px solid #fff; border-radius: 40px; padding: 20px 10px; background-color: #000; box-shadow: 0 0 20px #00f6ff inset; display: flex; align-items: flex-start; justify-content: flex-start;">
           <div id="phone-typing" class="phone-typing"></div>
         </div>
       </div>
@@ -194,20 +199,155 @@
       <div style="flex: 1; min-width: 300px; padding: 20px;">
         <h1>Introduction</h1>
         <p style="font-size: 16px; line-height: 1.6; color: #fff;">
-          AICHATCODE is a modern real-time chat application inspired by the concept of WhatsApp group chats. It allows multiple users to join a group and chat with each other seamlessly. But what makes this project unique is its smart AI integration.
+          AICHATCODE is a modern real-time chat application inspired by the concept of WhatsApp group chats. It allows
+          multiple users to join a group and chat with each other seamlessly. But what makes this project unique is its
+          smart AI integration.
           <br><br>
-          Whenever a user types <strong>@ai</strong> followed by any prompt in the chat, the message is processed, and a response is generated using Google Gemini AI. This means the chat app is not just for user-to-user conversations but also serves as an intelligent assistant within the group.
+          Whenever a user types <strong>@ai</strong> followed by any prompt in the chat, the message is processed, and a
+          response is generated using Google Gemini AI. This means the chat app is not just for user-to-user
+          conversations but also serves as an intelligent assistant within the group.
         </p>
       </div>
-  
+
       <!-- Logo Section -->
       <div style="flex: 1; min-width: 300px; text-align: center; padding: 20px;">
         <img src="logo.png" alt="AICHATCODE Logo" style="max-width: 100%; height: auto; border-radius: 20px;">
       </div>
     </div>
   </div>
-  
-  
+
+  <div class="slide" id="slide4">
+    <div class="container"
+      style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; padding: 40px 20px; color: white;">
+
+      <!-- Left Side: Text -->
+      <div style="flex: 1; min-width: 300px; text-align: left;">
+        <h1 style="font-size: 2.5rem; font-weight: bold; color: #FFD700; text-shadow: 2px 2px 4px black;">Problem
+          Statement</h1>
+        <ul style="margin-top: 20px; font-size: 1.2rem; line-height: 2;">
+          <li>Regular chat apps lack AI support</li>
+          <li>No easy way to ask AI questions within a group chat</li>
+          <li>Need for a system where humans + AI can chat together in real time</li>
+        </ul>
+      </div>
+
+      <!-- Right Side: Phone -->
+      <div style="flex: 0 0 auto; margin-top: 20px; position: relative;">
+
+        <!-- Phone Body -->
+        <div
+          style="width: 240px; height: 450px; background-color: #000; border-radius: 25px; border: 2px solid #00ff88; box-shadow: 0 0 15px #00ff88; padding: 10px; font-family: sans-serif; font-size: 0.8rem; color: #fff; overflow: hidden; position: relative; display: flex; flex-direction: column; justify-content: flex-start;">
+
+          <!-- Camera -->
+          <div
+            style="width: 10px; height: 10px; background-color: #888; border-radius: 50%; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); box-shadow: 0 0 5px #aaa;">
+          </div>
+
+          <!-- Chat Area -->
+          <div style="overflow-y: auto; display: flex; flex-direction: column; gap: 6px; padding: 10px 5px 60px 5px;">
+
+            <!-- Received Message (AI) -->
+            <div class="message"
+              style="align-self: flex-start; background-color: #1f2e2e; padding: 6px 10px; border-radius: 10px 10px 10px 0; max-width: 80%; animation: typingAnimation 2s steps(30) 1;">
+              Hello brother, I need your Help !
+            </div>
+
+            <!-- Sent Message -->
+            <div class="message"
+              style="align-self: flex-end; background-color: #005c4b; padding: 6px 10px; border-radius: 10px 10px 0 10px; max-width: 80%; animation: typingAnimation 2s steps(30) 1;">
+              yes! How can I help you?
+            </div>
+
+            <!-- Received Message (AI) -->
+            <div class="message"
+              style="align-self: flex-start; background-color: #1f2e2e; padding: 6px 10px; border-radius: 10px 10px 10px 0; max-width: 80%; animation: typingAnimation 2s steps(30) 1;">
+              please! give a java Program for sum of two numer.
+            </div>
+
+            <!-- Sent Message -->
+            <div class="message"
+              style="align-self: flex-end; background-color: #005c4b; padding: 6px 10px; border-radius: 10px 10px 0 10px; max-width: 80%; animation: typingAnimation 2s steps(30) 1;">
+              ok ! i will search in Chatgpt than send you.
+            </div>
+
+            <!-- Typing Indicator -->
+
+            <div
+              style="align-self: flex-start; background-color: #1f2e2e; padding: 6px 10px; border-radius: 10px 10px 10px 0; max-width: 60%; color: #00ffff; animation: typingAnimation 1.5s infinite;">
+              <span class="typing-dots">Typing<span>.</span><span>.</span><span>.</span></span>
+            </div>
+          </div>
+
+          <!-- Input Box and Send Button -->
+          <div style="position: absolute; bottom: 10px; left: 10px; right: 10px; display: flex; align-items: center;">
+            <input type="text" placeholder="Type a message..."
+              style="width: 80%; padding: 10px; border-radius: 20px; border: 2px solid #00ff88; background-color: #333; color: #fff; font-size: 1rem;">
+            <button
+              style="width: 15%; padding: 10px; margin-left: 10px; background-color: #00ff88; border: none; border-radius: 50%; color: #fff; font-size: 1rem; cursor: pointer;">
+              <i class="fa fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Power Button (Left Side) -->
+        <div
+          style="position: absolute; top: 100px; left: -8px; width: 4px; height: 30px; background-color: #666; border-radius: 2px;">
+        </div>
+
+        <!-- Volume Buttons (Right Side) -->
+        <div
+          style="position: absolute; top: 90px; right: -8px; width: 4px; height: 20px; background-color: #666; border-radius: 2px;">
+        </div>
+        <div
+          style="position: absolute; top: 120px; right: -8px; width: 4px; height: 20px; background-color: #666; border-radius: 2px;">
+        </div>
+      </div>
+    </div>
+
+    <!-- Typing Animation Style -->
+    <style>
+      .typing-dots span {
+        animation: blink 1.2s infinite;
+      }
+
+      .typing-dots span:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+
+      .typing-dots span:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+
+      @keyframes blink {
+        0% {
+          opacity: 0.2;
+        }
+
+        20% {
+          opacity: 1;
+        }
+
+        100% {
+          opacity: 0.2;
+        }
+      }
+
+      @keyframes typingAnimation {
+        0% {
+          width: 0;
+          opacity: 0;
+        }
+
+        100% {
+          width: 100%;
+          opacity: 1;
+        }
+      }
+    </style>
+  </div>
+
+
+
 
   <div class="nav-buttons">
     <button onclick="changeSlide(-1)">⟵ Previous</button>
