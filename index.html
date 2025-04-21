@@ -72,7 +72,7 @@
       height: 130px;
       object-fit: cover;
       border-radius: 50%;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+      box-shadow: 0 0 20px rgba(240, 2, 2, 0.6);
       transition: transform 0.3s ease;
     }
 
@@ -85,21 +85,22 @@
       width: 280px;
       max-width: 100%;
       border-radius: 20px;
-      box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+      box-shadow: 0 0 30px rgba(162, 4, 4, 0.4);
     }
 
     .nav-buttons {
-      position: absolute;
-      top: 50%;
+      position: fixed;
+      bottom: 20px;
+      left: 0;
       width: 100%;
       display: flex;
       justify-content: space-between;
-      transform: translateY(-50%);
-      padding: 0 20px;
+      padding: 0 30px;
+      z-index: 10;
     }
 
     .nav-buttons button {
-      background-color: rgba(255, 255, 255, 0.2);
+      background-color: rgba(105, 158, 6, 0.2);
       color: #fff;
       border: none;
       border-radius: 10px;
@@ -110,7 +111,7 @@
     }
 
     .nav-buttons button:hover {
-      background-color: rgba(255, 255, 255, 0.4);
+      background-color: rgba(179, 16, 16, 0.4);
     }
 
     .slide {
@@ -120,13 +121,23 @@
     .slide.active {
       display: block;
     }
+
+    .phone-typing {
+      font-size: 1.3rem;
+      font-family: monospace;
+      white-space: pre-line;
+      overflow-y: auto;
+      color: #00ffea;
+      padding-top: 10px;
+      text-align: left;
+    }
   </style>
 </head>
 
 <body>
   <canvas id="network"></canvas>
 
-  <div class="slide active" id="slide1">
+  <div class="slide active">
     <div class="container">
       <h1>AICHATCODE</h1>
       <div class="section">
@@ -135,38 +146,72 @@
         <strong>Roll No:</strong> 2521P15, 2521P13, 2521P44, 2521p.., 2521p..<br />
         <strong>Regd No:</strong> 2101201092, 2101201090, 2101201067, 21012010.., 21012010..
       </div>
-      <div class="guided">
-        GUIDED BY: Asst. Samir Kumar Behera
-      </div>
+      <div class="guided">GUIDED BY: Asst. Samir Kumar Behera</div>
       <div class="image-section">
         <div>
-          <img src="logo.png" alt="Project Logo" />
-          <div style="color:#fff; margin-top:8px; font-size:0.9rem;">Project Logo</div>
-        </div>
-        <div>
           <img src="teacher.png" alt="Guide Image" />
-          <div style="color:#fff; margin-top:8px; font-size:0.9rem;">Guide Image</div>
+          <div style="color:#fff; margin-top:8px; font-size:0.9rem;">Asst.Prof. SAMIR KUMAR BEHERA</div>
         </div>
       </div>
-      <img class="head-image" src="Screenshot%202025-04-20%20181002.png" alt="Head Design" />
+      <img class="head-image" />
     </div>
   </div>
 
-  <div class="slide" id="slide2">
-    <div class="container">
-      <h1>Project Overview</h1>
-      <div class="section">
-        Our Emotional-Based Music System detects the user's mood using facial recognition or text input,
-        and automatically recommends or plays music based on the emotional state.<br><br>
-        This system combines Artificial Intelligence, Machine Learning, and Human-Computer Interaction
-        to create a personalized experience.
+  <div class="slide">
+    <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start;">
+      <div style="flex: 1; min-width: 250px; text-align: left; color: #fff;">
+        <h1>Contents</h1>
+        <ol style="line-height: 1.5; font-size: 1.1rem;">
+          <li>Introduction</li>
+          <li>Problem Statement</li>
+          <li>Solution Overview</li>
+          <li>Objectives</li>
+          <li>Key Features</li>
+          <li>Tech Stack</li>
+          <li>System Architecture</li>
+          <li>Module Breakdown</li>
+          <li>How AI Integration Works</li>
+          <li>Screenshots/Demo</li>
+          <li>Use Cases</li>
+          <li>Challenges</li>
+          <li>Future Scope</li>
+          <li>Conclusion</li>
+          <li>Q&A</li>
+        </ol>
+      </div>
+      <div style="flex: 1; min-width: 250px; display: flex; justify-content: center;">
+        <div style="width: 250px; height: 500px; border: 6px solid #fff; border-radius: 40px; padding: 20px 10px; background-color: #000; box-shadow: 0 0 20px #00f6ff inset; display: flex; align-items: flex-start; justify-content: flex-start;">
+          <div id="phone-typing" class="phone-typing"></div>
+        </div>
       </div>
     </div>
   </div>
+
+  <!-- //slide 4 -->
+  <div class="slide" id="slide4">
+    <div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+      <!-- Introduction Text -->
+      <div style="flex: 1; min-width: 300px; padding: 20px;">
+        <h1>Introduction</h1>
+        <p style="font-size: 16px; line-height: 1.6; color: #fff;">
+          AICHATCODE is a modern real-time chat application inspired by the concept of WhatsApp group chats. It allows multiple users to join a group and chat with each other seamlessly. But what makes this project unique is its smart AI integration.
+          <br><br>
+          Whenever a user types <strong>@ai</strong> followed by any prompt in the chat, the message is processed, and a response is generated using Google Gemini AI. This means the chat app is not just for user-to-user conversations but also serves as an intelligent assistant within the group.
+        </p>
+      </div>
+  
+      <!-- Logo Section -->
+      <div style="flex: 1; min-width: 300px; text-align: center; padding: 20px;">
+        <img src="logo.png" alt="AICHATCODE Logo" style="max-width: 100%; height: auto; border-radius: 20px;">
+      </div>
+    </div>
+  </div>
+  
+  
 
   <div class="nav-buttons">
-    <button onclick="showSlide(currentSlide - 1)">⟵ Previous</button>
-    <button onclick="showSlide(currentSlide + 1)">Next ⟶</button>
+    <button onclick="changeSlide(-1)">⟵ Previous</button>
+    <button onclick="changeSlide(1)">Next ⟶</button>
   </div>
 
   <script>
@@ -175,27 +220,21 @@
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    const nodes = [];
-    const totalNodes = 100;
-
-    for (let i = 0; i < totalNodes; i++) {
-      nodes.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 1,
-        vy: (Math.random() - 0.5) * 1
-      });
-    }
+    const nodes = Array.from({ length: 100 }, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      vx: (Math.random() - 0.5) * 1,
+      vy: (Math.random() - 0.5) * 1
+    }));
 
     function draw() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.fillStyle = 'rgba(0, 0, 50, 0.5)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      nodes.forEach((node, index) => {
+      nodes.forEach((node, i) => {
         node.x += node.vx;
         node.y += node.vy;
-
         if (node.x < 0 || node.x > canvas.width) node.vx *= -1;
         if (node.y < 0 || node.y > canvas.height) node.vy *= -1;
 
@@ -204,12 +243,11 @@
         ctx.fillStyle = '#ffffff';
         ctx.fill();
 
-        for (let j = index + 1; j < nodes.length; j++) {
+        for (let j = i + 1; j < nodes.length; j++) {
           const other = nodes[j];
           const dx = node.x - other.x;
           const dy = node.y - other.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
-
           if (dist < 100) {
             ctx.beginPath();
             ctx.moveTo(node.x, node.y);
@@ -222,17 +260,64 @@
 
       requestAnimationFrame(draw);
     }
-
     draw();
 
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
 
-    function showSlide(index) {
-      if (index < 0 || index >= slides.length) return;
+    function changeSlide(direction) {
       slides[currentSlide].classList.remove('active');
-      currentSlide = index;
+      currentSlide = (currentSlide + direction + slides.length) % slides.length;
       slides[currentSlide].classList.add('active');
+
+      if (slides[currentSlide].querySelector('#phone-typing')) {
+        startTyping();
+      }
+    }
+
+    const contentLines = [
+      "1. Introduction",
+      "2. Problem Statement",
+      "3. Solution Overview",
+      "4. Objectives",
+      "5. Key Features",
+      "6. Tech Stack",
+      "7. System Architecture",
+      "8. Module Breakdown",
+      "9. How AI Integration Works",
+      "10. Screenshots/Demo",
+      "11. Use Cases",
+      "12. Challenges",
+      "13. Future Scope",
+      "14. Learnings",
+      "15. Conclusion",
+      "16. Q&A"
+    ];
+
+    let phoneTypingEl = document.getElementById('phone-typing');
+    let currentLine = 0;
+    let currentChar = 0;
+
+    function typeNextChar() {
+      if (currentLine >= contentLines.length) return;
+      const line = contentLines[currentLine];
+      phoneTypingEl.textContent += line[currentChar];
+      currentChar++;
+      if (currentChar < line.length) {
+        setTimeout(typeNextChar, 50);
+      } else {
+        phoneTypingEl.textContent += '\n';
+        currentLine++;
+        currentChar = 0;
+        setTimeout(typeNextChar, 300);
+      }
+    }
+
+    function startTyping() {
+      phoneTypingEl.textContent = '';
+      currentLine = 0;
+      currentChar = 0;
+      typeNextChar();
     }
   </script>
 </body>
