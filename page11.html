@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>वेबपेज</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            display: flex;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            font-size: 16px; 
+        }
+
+        .left-panel {
+            width: 30%;
+            padding: 20px;
+            background-color: #444;
+            font-size: 1.1em; 
+        }
+
+        .left-panel h2, .left-panel ul {
+            text-align: center;
+        }
+
+        .right-panel {
+            width: 70%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        video {
+            width: 80%;
+            max-width: 600px;
+            border: 5px solid; /* इनिशियल बॉर्डर */
+            animation: glitch-border 2s infinite alternate; /* बॉर्डर एनिमेशन */
+        }
+
+        @keyframes glitch-border {
+            0% { border-color: #ff00ff; } /* मैजेंटा */
+            25% { border-color: #00ffff; } /* सायन */
+            50% { border-color: #ffff00; } /* पीला */
+            75% { border-color: #00ff00; } /* हरा */
+            100% { border-color: #ff00ff; } /* वापस मैजेंटा */
+        }
+
+        .fullscreen-button {
+            margin-top: 15px; /* थोड़ा और मार्जिन */
+            padding: 12px 24px; /* बटन का पैडिंग बढ़ाया */
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1em; /* बटन के टेक्स्ट का साइज़ */
+        }
+
+        .fullscreen-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="left-panel">
+        <h2>Screenshots / Demo</h2>
+        <ul>
+            <li>Group chat interface</li>
+            <li>AI responding to prompt</li>
+            <li>Group creation, login, etc.</li>
+        </ul>
+    </div>
+
+    <div class="right-panel">
+        <video id="myVideo" src="report.mp4" autoplay loop controls></video>
+        <button class="fullscreen-button" onclick="toggleFullScreen()">Full Screen</button>
+    </div>
+
+    <script>
+        function toggleFullScreen() {
+            var video = document.getElementById("myVideo");
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.mozRequestFullScreen) { /* Firefox */
+                video.mozRequestFullScreen();
+            } else if (video.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+                video.webkitRequestFullscreen();
+            } else if (video.msRequestFullscreen) { /* IE/Edge */
+                video.msRequestFullscreen();
+            }
+        }
+    </script>
+
+</body>
+</html>

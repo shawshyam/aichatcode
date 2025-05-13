@@ -4,7 +4,7 @@
 <head>
        <meta charset="UTF-8" />
        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-       <title>AICHATCODE</title>
+       <title>Introduction</title>
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
               integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
               crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -97,7 +97,7 @@
                      bottom: 10px;
                      left: 0;
                      width: 96%;
-                     /* display: flex; */
+                     display: flex;
                      justify-content: space-between;
                      padding: 0 30px;
                      z-index: 10;
@@ -118,59 +118,103 @@
                      background-color: rgba(235, 7, 7, 0.4);
               }
 
-              .container {
-                     padding: 20px;
+              * {
+                     margin: 0;
+                     padding: 0;
+                     box-sizing: border-box;
               }
 
-              .content-box {
+              /* Slide */
+              .slide {
+                     margin: auto;
+                     width: 80%;
+                     height: 80vh;
+                     background: linear-gradient(135deg, #ff9a9e, #fad0c4);
                      display: flex;
-                     justify-content: space-between;
-                     align-items: flex-start;
-                     margin-top: 20px;
+                     align-items: center;
+                     justify-content: center;
+                     font-family: 'Poppins', sans-serif;
+                     color: #333;
               }
 
-              .left-section {
-                     width: 60%;
-              }
-
-              .right-section {
-                     width: 35%;
+              /* Container */
+              .container {
+                     width: 800px;
+                     margin: auto;
+                     background: rgba(255, 255, 255, 0.9);
+                     padding: 30px;
+                     border-radius: 20px;
+                     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
                      text-align: center;
+                     animation: fadeIn 2s ease;
               }
 
-              table {
-                     width: 100%;
-                     border-collapse: collapse;
-                     margin-top: 10px;
+              /* Heading */
+              .container h1 {
+                     font-size: 36px;
+                     margin-bottom: 20px;
               }
 
-              th,
-              td {
-                     border: 1px solid #ccc;
-                     padding: 8px 12px;
-                     text-align: left;
+              /* Image Section */
+              .image-section {
+                     display: flex;
+                     justify-content: space-around;
+                     margin-bottom: 30px;
               }
 
-              th {
-                     background-color: #f2f2f2;
+              .phone-image img {
+                     width: 140px;
+                     height: 280px;
+                     border-radius: 20px;
+                     object-fit: cover;
+                     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+                     animation: popIn 1s ease forwards;
               }
 
-              .guided {
-                     margin-top: 20px;
-                     font-weight: bold;
+              /* Problem List */
+              .problem-list {
+                     list-style: none;
+                     padding: 0;
               }
 
-              .logo-box {
-                     padding: 20px;
-                     border: 1px dashed #ccc;
-                     background-color: #f9f9f9;
-                     border-radius: 10px;
+              .problem-list li {
+                     font-size: 20px;
+                     margin: 15px 0;
+                     display: flex;
+                     align-items: center;
+                     justify-content: center;
+                     gap: 10px;
               }
 
-              .logo-image {
-                     max-width: 100%;
-                     height: auto;
-                     margin-top: 10px;
+              /* Icons */
+              .problem-list i {
+                     font-size: 24px;
+                     color: #ff5722;
+              }
+
+              /* Animations */
+              @keyframes fadeIn {
+                     from {
+                            opacity: 0;
+                            transform: translateY(-20px);
+                     }
+
+                     to {
+                            opacity: 1;
+                            transform: translateY(0);
+                     }
+              }
+
+              @keyframes popIn {
+                     from {
+                            opacity: 0;
+                            transform: scale(0.8);
+                     }
+
+                     to {
+                            opacity: 1;
+                            transform: scale(1);
+                     }
               }
        </style>
        <!-- </head> -->
@@ -180,62 +224,30 @@
 
        <div class="slide active">
               <div class="container">
-                     <h1>AICHATCODE</h1>
-                     <div class="content-box">
-                            <!-- Left: Details Table -->
-                            <div class="left-section">
-                                   <strong>Presented by:</strong><br />
-                                   <table>
-                                          <tr>
-                                                 <th>Name</th>
-                                                 <th>Roll No</th>
-                                                 <th>Regd No</th>
-                                          </tr>
-                                          <tr>
-                                                 <td>Shyam Sundar Shaw</td>
-                                                 <td>2521P15</td>
-                                                 <td>2101201092</td>
-                                          </tr>
-                                          <tr>
-                                                 <td>Satyam Patra</td>
-                                                 <td>2521P13</td>
-                                                 <td>2101201090</td>
-                                          </tr>
-                                          <tr>
-                                                 <td>Jaykisan Patra</td>
-                                                 <td>2521P44</td>
-                                                 <td>2101201067</td>
-                                          </tr>
-                                          <tr>
-                                                 <td>Deepika Bose</td>
-                                                 <td>2521P42</td>
-                                                 <td>2101201059</td>
-                                          </tr>
-                                          <tr>
-                                                 <td>Chandana Patra</td>
-                                                 <td>2521P33</td>
-                                                 <td>2101201058</td>
-                                          </tr>
-                                   </table>
-                                   <div class="guided">GUIDED BY: Asst. Prof. Samir Kumar Behera</div>
-                            </div>
+                     <h1>🚩 Problem Statement</h1>
 
-                            <!-- Right: Logo Section -->
-                            <div class="right-section">
-                                   <div class="logo-box">
-                                          <!-- <p><strong>Logo Section</strong></p> -->
-                                          <img src="logo.png" alt="Project Logo" class="logo-image" />
-                                   </div>
+                     <div class="image-section">
+                            <div class="phone-image">
+                                   <img src="ww1.jpeg" alt="Old Chat App" />
+                            </div>
+                            <div class="phone-image">
+                                   <img src="ww2.jpeg" alt="AI Chat App" />
                             </div>
                      </div>
+
+                     <ul class="problem-list">
+                            <li><i class="fas fa-robot"></i> Regular chat apps lack AI support</li>
+                            <li><i class="fas fa-comments"></i> No easy way to ask AI questions within a group chat</li>
+                            <li><i class="fas fa-users-cog"></i> Need for a system where humans + AI can chat together
+                                   in real time</li>
+                     </ul>
               </div>
        </div>
 
 
-
        <div class="nav-buttons">
-              <button onclick="window.open('index.html', '_blank')">⟵ Previous</button>
-              <button onclick="window.open('page2.html', '_blank')">Next ⟶</button>
+              <button  onclick="window.open('page3.html', 'blank')" >⟵ Previous</button>
+              <button onclick="window.open('page5.html', 'blank')">Next ⟶</button>
        </div>
 
        <script>

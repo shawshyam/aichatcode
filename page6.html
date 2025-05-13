@@ -4,7 +4,7 @@
 <head>
        <meta charset="UTF-8" />
        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-       <title>AICHATCODE</title>
+       <title>objective</title>
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
               integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
               crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -118,59 +118,89 @@
                      background-color: rgba(235, 7, 7, 0.4);
               }
 
-              .container {
-                     padding: 20px;
-              }
 
-              .content-box {
+              /* margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+              /* Slide Style */
+              .slide {
+                     margin: auto;
+                     width: 80%;
+                     height: 80vh;
+                     background: linear-gradient(135deg, #00c6ff, #0072ff);
                      display: flex;
-                     justify-content: space-between;
-                     align-items: flex-start;
-                     margin-top: 20px;
+                     align-items: center;
+                     justify-content: center;
+                     font-family: 'Poppins', sans-serif;
+                     color: white;
               }
 
-              .left-section {
-                     width: 60%;
-              }
 
-              .right-section {
-                     width: 35%;
+              /* Container */
+              .container {
+                     width: 600px;
+                     background: rgba(255, 255, 255, 0.1);
+                     padding: 40px 30px;
+                     border-radius: 20px;
+                     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
                      text-align: center;
+                     animation: fadeIn 2s ease-in-out;
               }
 
-              table {
-                     width: 100%;
-                     border-collapse: collapse;
-                     margin-top: 10px;
+
+              /* Heading */
+              .container h1 {
+                     font-size: 48px;
+                     margin-bottom: 30px;
               }
 
-              th,
-              td {
-                     border: 1px solid #ccc;
-                     padding: 8px 12px;
-                     text-align: left;
-              }
-
-              th {
-                     background-color: #f2f2f2;
-              }
-
-              .guided {
+              /* Objectives List */
+              .objectives {
+                     list-style: none;
                      margin-top: 20px;
-                     font-weight: bold;
               }
 
-              .logo-box {
-                     padding: 20px;
-                     border: 1px dashed #ccc;
-                     background-color: #f9f9f9;
-                     border-radius: 10px;
+              .objectives li {
+                     font-size: 24px;
+                     margin-bottom: 20px;
+                     display: flex;
+                     align-items: center;
+                     justify-content: center;
+                     gap: 10px;
+                     animation: slideIn 1s ease forwards;
               }
 
-              .logo-image {
-                     max-width: 100%;
-                     height: auto;
-                     margin-top: 10px;
+              /* Icons */
+              .objectives i {
+                     font-size: 28px;
+                     color: #ffeb3b;
+              }
+
+              /* Animations */
+              @keyframes fadeIn {
+                     from {
+                            opacity: 0;
+                            transform: translateY(-20px);
+                     }
+
+                     to {
+                            opacity: 1;
+                            transform: translateY(0);
+                     }
+              }
+
+              @keyframes slideIn {
+                     from {
+                            opacity: 0;
+                            transform: translateX(-30px);
+                     }
+
+                     to {
+                            opacity: 1;
+                            transform: translateX(0);
+                     }
               }
        </style>
        <!-- </head> -->
@@ -180,62 +210,20 @@
 
        <div class="slide active">
               <div class="container">
-                     <h1>AICHATCODE</h1>
-                     <div class="content-box">
-                            <!-- Left: Details Table -->
-                            <div class="left-section">
-                                   <strong>Presented by:</strong><br />
-                                   <table>
-                                          <tr>
-                                                 <th>Name</th>
-                                                 <th>Roll No</th>
-                                                 <th>Regd No</th>
-                                          </tr>
-                                          <tr>
-                                                 <td>Shyam Sundar Shaw</td>
-                                                 <td>2521P15</td>
-                                                 <td>2101201092</td>
-                                          </tr>
-                                          <tr>
-                                                 <td>Satyam Patra</td>
-                                                 <td>2521P13</td>
-                                                 <td>2101201090</td>
-                                          </tr>
-                                          <tr>
-                                                 <td>Jaykisan Patra</td>
-                                                 <td>2521P44</td>
-                                                 <td>2101201067</td>
-                                          </tr>
-                                          <tr>
-                                                 <td>Deepika Bose</td>
-                                                 <td>2521P42</td>
-                                                 <td>2101201059</td>
-                                          </tr>
-                                          <tr>
-                                                 <td>Chandana Patra</td>
-                                                 <td>2521P33</td>
-                                                 <td>2101201058</td>
-                                          </tr>
-                                   </table>
-                                   <div class="guided">GUIDED BY: Asst. Prof. Samir Kumar Behera</div>
-                            </div>
-
-                            <!-- Right: Logo Section -->
-                            <div class="right-section">
-                                   <div class="logo-box">
-                                          <!-- <p><strong>Logo Section</strong></p> -->
-                                          <img src="logo.png" alt="Project Logo" class="logo-image" />
-                                   </div>
-                            </div>
-                     </div>
+                     <h1>🎯 Objective</h1>
+                     <ul class="objectives">
+                            <li><i class="fas fa-robot"></i> Regular chat apps lack AI support</li>
+                            <li><i class="fas fa-comments"></i> No easy way to ask AI questions within a group chat</li>
+                            <li><i class="fas fa-users-cog"></i> Need for a system where humans + AI can chat together
+                                   in real time</li>
+                     </ul>
               </div>
        </div>
 
 
-
        <div class="nav-buttons">
-              <button onclick="window.open('index.html', '_blank')">⟵ Previous</button>
-              <button onclick="window.open('page2.html', '_blank')">Next ⟶</button>
+              <button onclick="window.open('page5.html', '_blank')">⟵ Previous</button>
+              <button onclick="window.open('page7.html', '_blank')">Next ⟶</button>
        </div>
 
        <script>

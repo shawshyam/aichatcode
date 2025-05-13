@@ -4,7 +4,7 @@
 <head>
        <meta charset="UTF-8" />
        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-       <title>AICHATCODE</title>
+       <title>Introduction</title>
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
               integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
               crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -118,59 +118,144 @@
                      background-color: rgba(235, 7, 7, 0.4);
               }
 
-              .container {
-                     padding: 20px;
+              .stylish-slide {
+                     background: linear-gradient(135deg, #090979, #00d4ff);
+                     padding: 40px 20px;
+                     border-radius: 20px;
+                     margin: 20px auto;
+                     max-width: 1100px;
+                     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+                     animation: slideIn 1s ease forwards;
               }
 
-              .content-box {
+              .compact-intro {
                      display: flex;
                      justify-content: space-between;
-                     align-items: flex-start;
+                     align-items: center;
+                     flex-wrap: wrap;
+              }
+
+              .intro-left {
+                     flex: 1 1 55%;
+                     color: white;
+                     padding-right: 20px;
+              }
+
+              .intro-left h1 {
+                     font-size: 36px;
+                     margin-bottom: 15px;
+                     padding-left: 10px;
+                     border-left: 5px solid white;
+              }
+
+              .animated-text {
+                     font-size: 17px;
+                     line-height: 1.6;
+                     opacity: 1;
+                     animation: floatText 3s ease-in-out infinite;
+              }
+
+              /* Glow effect */
+              .infinite-glow {
+                     animation: glowText 2s ease-in-out infinite alternate;
+              }
+
+              /* Logo side */
+              .intro-right {
+                     flex: 1 1 35%;
+                     display: flex;
+                     justify-content: center;
+                     align-items: center;
                      margin-top: 20px;
               }
 
-              .left-section {
-                     width: 60%;
-              }
-
-              .right-section {
-                     width: 35%;
-                     text-align: center;
-              }
-
-              table {
-                     width: 100%;
-                     border-collapse: collapse;
-                     margin-top: 10px;
-              }
-
-              th,
-              td {
-                     border: 1px solid #ccc;
-                     padding: 8px 12px;
-                     text-align: left;
-              }
-
-              th {
-                     background-color: #f2f2f2;
-              }
-
-              .guided {
-                     margin-top: 20px;
-                     font-weight: bold;
-              }
-
-              .logo-box {
+              .logo-container {
+                     background: #ffffff10;
                      padding: 20px;
-                     border: 1px dashed #ccc;
-                     background-color: #f9f9f9;
-                     border-radius: 10px;
+                     border-radius: 16px;
+                     backdrop-filter: blur(10px);
+                     border: 1px solid #ffffff30;
               }
 
-              .logo-image {
-                     max-width: 100%;
+              .logo {
+                     width: 100%;
+                     max-width: 200px;
                      height: auto;
-                     margin-top: 10px;
+                     border-radius: 12px;
+                     animation: pulseGlow 2s infinite ease-in-out;
+              }
+
+              /* Neon Glow */
+              .neon-border {
+                     box-shadow: 0 0 15px #0ff, 0 0 30px #0ff;
+              }
+
+              /* Floating effect for text & logo */
+              .loop-float {
+                     animation: floatText 3s ease-in-out infinite;
+              }
+
+              .loop-float-right {
+                     animation: floatLogo 4s ease-in-out infinite;
+              }
+
+              /* Keyframes */
+              @keyframes floatText {
+
+                     0%,
+                     100% {
+                            transform: translateY(0);
+                     }
+
+                     50% {
+                            transform: translateY(-8px);
+                     }
+              }
+
+              @keyframes floatLogo {
+
+                     0%,
+                     100% {
+                            transform: translateY(0);
+                     }
+
+                     50% {
+                            transform: translateY(-12px);
+                     }
+              }
+
+              @keyframes pulseGlow {
+
+                     0%,
+                     100% {
+                            box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+                     }
+
+                     50% {
+                            box-shadow: 0 0 20px #0ff, 0 0 40px #0ff;
+                     }
+              }
+
+              @keyframes glowText {
+                     0% {
+                            text-shadow: 0 0 10px #fff, 0 0 20px #0ff;
+                     }
+
+                     100% {
+                            text-shadow: 0 0 20px #fff, 0 0 40px #0ff;
+                     }
+              }
+
+              @keyframes slideIn {
+                     from {
+                            transform: translateY(50px);
+                            opacity: 0;
+                     }
+
+                     to {
+                            transform: translateY(0);
+                            opacity: 1;
+                     }
               }
        </style>
        <!-- </head> -->
@@ -178,64 +263,32 @@
 <body>
        <canvas id="network"></canvas>
 
-       <div class="slide active">
-              <div class="container">
-                     <h1>AICHATCODE</h1>
-                     <div class="content-box">
-                            <!-- Left: Details Table -->
-                            <div class="left-section">
-                                   <strong>Presented by:</strong><br />
-                                   <table>
-                                          <tr>
-                                                 <th>Name</th>
-                                                 <th>Roll No</th>
-                                                 <th>Regd No</th>
-                                          </tr>
-                                          <tr>
-                                                 <td>Shyam Sundar Shaw</td>
-                                                 <td>2521P15</td>
-                                                 <td>2101201092</td>
-                                          </tr>
-                                          <tr>
-                                                 <td>Satyam Patra</td>
-                                                 <td>2521P13</td>
-                                                 <td>2101201090</td>
-                                          </tr>
-                                          <tr>
-                                                 <td>Jaykisan Patra</td>
-                                                 <td>2521P44</td>
-                                                 <td>2101201067</td>
-                                          </tr>
-                                          <tr>
-                                                 <td>Deepika Bose</td>
-                                                 <td>2521P42</td>
-                                                 <td>2101201059</td>
-                                          </tr>
-                                          <tr>
-                                                 <td>Chandana Patra</td>
-                                                 <td>2521P33</td>
-                                                 <td>2101201058</td>
-                                          </tr>
-                                   </table>
-                                   <div class="guided">GUIDED BY: Asst. Prof. Samir Kumar Behera</div>
-                            </div>
-
-                            <!-- Right: Logo Section -->
-                            <div class="right-section">
-                                   <div class="logo-box">
-                                          <!-- <p><strong>Logo Section</strong></p> -->
-                                          <img src="logo.png" alt="Project Logo" class="logo-image" />
-                                   </div>
+       <div class="slide active stylish-slide">
+              <div class="container compact-intro">
+                     <div class="intro-left">
+                            <h1 class="infinite-glow">Introduction</h1>
+                            <p class="animated-text loop-float">
+                                   <strong>AICHATCODE</strong> is a modern real-time chat application inspired by
+                                   WhatsApp group chats.<br>
+                                   It allows multiple users to chat seamlessly with integrated smart AI.<br><br>
+                                   When a user types <strong>@ai</strong> followed by a message, it's processed by
+                                   Google Gemini AI to generate responses,<br>
+                                   making it a smart assistant within the group.
+                            </p>
+                     </div>
+                     <div class="intro-right">
+                            <div class="logo-container neon-border loop-float-right">
+                                   <img src="logo.png" alt="Logo"
+                                          class="logo pulse" />
                             </div>
                      </div>
               </div>
        </div>
 
 
-
        <div class="nav-buttons">
-              <button onclick="window.open('index.html', '_blank')">⟵ Previous</button>
-              <button onclick="window.open('page2.html', '_blank')">Next ⟶</button>
+              <button onclick="window.open('page2.html', '_blank')">⟵ Previous</button>
+              <button onclick="window.open('page4.html', '_blank')">Next ⟶</button>
        </div>
 
        <script>

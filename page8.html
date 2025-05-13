@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+       <meta charset="UTF-8" />
+       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+       <title>Introduction</title>
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+              integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+              crossorigin="anonymous" referrerpolicy="no-referrer" />
+       <style>
+              @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Rubik:wght@400;600&display=swap');
+
+              body {
+                     margin: 0;
+                     font-family: 'Rubik', sans-serif;
+                     background: radial-gradient(circle at top, #0f0c29, #0d0c18, #0e0e13);
+                     overflow: hidden;
+                     color: #ffd700;
+                     text-align: center;
+                     padding: 40px 20px;
+                     position: relative;
+              }
+
+              canvas {
+                     position: fixed;
+                     top: 0;
+                     left: 0;
+                     z-index: -1;
+              }
+
+              h1 {
+                     font-size: 3rem;
+                     font-weight: 600;
+                     margin-bottom: 25px;
+                     color: #ffd700;
+                     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+                     font-family: 'Orbitron', sans-serif;
+              }
+
+              .container {
+                     width: 1050px;
+                     max-height: fit-content;
+                     margin-left: 110px;
+                     background: rgba(5, 5, 5, 0.1);
+                     border-radius: 25px;
+                     padding: 35px;
+                     box-shadow: 0 0 25px rgba(1, 1, 1, 0.101);
+                     backdrop-filter: blur(10px);
+              }
+
+              .section {
+                     margin: 25px 0;
+                     font-size: 1.2rem;
+                     line-height: 1.8;
+              }
+
+              .guided {
+                     color: #ff4b5c;
+                     font-weight: 600;
+                     font-size: 1.4rem;
+                     margin-top: 35px;
+              }
+
+              .image-section {
+                     display: flex;
+                     justify-content: center;
+                     align-items: center;
+                     gap: 20px;
+                     margin-top: 30px;
+                     flex-wrap: wrap;
+              }
+
+              .image-section img {
+                     width: 130px;
+                     height: 130px;
+                     object-fit: cover;
+                     border-radius: 50%;
+                     box-shadow: 0 0 20px rgba(240, 2, 2, 0.6);
+                     transition: transform 0.3s ease;
+              }
+
+              .image-section img:hover {
+                     transform: scale(1.1);
+              }
+
+              .head-image {
+                     margin-top: 40px;
+                     width: 280px;
+                     max-width: 100%;
+                     border-radius: 20px;
+                     box-shadow: 0 0 30px rgba(162, 4, 4, 0.4);
+              }
+
+              .nav-buttons {
+                     position: fixed;
+                     bottom: 10px;
+                     left: 0;
+                     width: 96%;
+                     display: flex;
+                     justify-content: space-between;
+                     padding: 0 30px;
+                     z-index: 10;
+              }
+
+              .nav-buttons button {
+                     background-color: rgba(105, 158, 6, 0.2);
+                     color: #ffffff;
+                     border: none;
+                     border-radius: 10px;
+                     padding: 10px 20px;
+                     font-size: 1rem;
+                     cursor: pointer;
+                     transition: background 0.3s;
+              }
+
+              .nav-buttons button:hover {
+                     background-color: rgba(235, 7, 7, 0.4);
+              }
+       </style>
+       <!-- </head> -->
+
+<body>
+       <canvas id="network"></canvas>
+
+       <div class="slide" id="slideTechStack"
+              style="padding: 60px 20px; background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); color: white; text-align: center; overflow: hidden;">
+              <h1
+                     style="font-size: 3rem; font-weight: bold; color: #00ffff; margin-bottom: 40px; text-shadow: 2px 2px 5px black; animation: fadeIn 1.5s ease-out;">
+                     Tech Stack Used</h1>
+
+              <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 50px;">
+
+                     <!-- MongoDB -->
+                     <div style="width: 220px; animation: floatUp 3s ease-in-out infinite; transition: transform 0.3s;"
+                            onmouseover="this.style.transform='scale(1.1)'"
+                            onmouseout="this.style.transform='scale(1)'">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                                   alt="MongoDB"
+                                   style="width: 150px; height: 150px; margin-bottom: 10px; animation: glowPulse 2s infinite;" />
+                            <p style="font-size: 1.3rem; font-weight: bold; margin: 0;">MongoDB</p>
+                            <p style="font-size: 0.95rem; color: #cccccc;">NoSQL database for storing data in flexible,
+                                   JSON-like format.
+                            </p>
+                     </div>
+
+                     <!-- ExpressJS -->
+                     <div style="width: 220px; animation: floatDown 3s ease-in-out infinite; transition: transform 0.3s;"
+                            onmouseover="this.style.transform='scale(1.1)'"
+                            onmouseout="this.style.transform='scale(1)'">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+                                   alt="ExpressJS"
+                                   style="width: 150px; height: 150px; background-color: white; padding: 10px; border-radius: 10px; animation: glowPulse 2s infinite;" />
+                            <p style="font-size: 1.3rem; font-weight: bold; margin: 0;">Express.js</p>
+                            <p style="font-size: 0.95rem; color: #cccccc;">Web framework for Node.js used to build
+                                   backend APIs.</p>
+                     </div>
+
+                     <!-- React -->
+                     <!-- React -->
+                     <div style="width: 220px; animation: floatUp 4s ease-in-out infinite; transition: transform 0.3s;"
+                            onmouseover="this.style.transform='scale(1.1)'"
+                            onmouseout="this.style.transform='scale(1)'">
+                            <div
+                                   style="width: 150px; height: 150px; border-radius: 50%; background: radial-gradient(circle at center, #222 40%, #00ffff55 100%); display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto; box-shadow: 0 0 25px #00ffff; animation: glowPulse 2s infinite;">
+                                   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                                          alt="React"
+                                          style="width: 80px; height: 80px; animation: spinReact 5s linear infinite;" />
+                            </div>
+                            <p style="font-size: 1.3rem; font-weight: bold; margin: 0;">React</p>
+                            <p style="font-size: 0.95rem; color: #cccccc;">Frontend library to build fast and dynamic
+                                   user interfaces.</p>
+                     </div>
+
+                     <!-- React Spin Animation -->
+                     <style>
+                            @keyframes spinReact {
+                                   0% {
+                                          transform: rotate(0deg);
+                                   }
+
+                                   100% {
+                                          transform: rotate(360deg);
+                                   }
+                            }
+
+                            @keyframes glowPulse {
+                                   0% {
+                                          box-shadow: 0 0 15px #00ffff;
+                                   }
+
+                                   50% {
+                                          box-shadow: 0 0 30px #00ffff;
+                                   }
+
+                                   100% {
+                                          box-shadow: 0 0 15px #00ffff;
+                                   }
+                            }
+
+                            @keyframes floatUp {
+
+                                   0%,
+                                   100% {
+                                          transform: translateY(0);
+                                   }
+
+                                   50% {
+                                          transform: translateY(-10px);
+                                   }
+                            }
+                     </style>
+
+
+                     <!-- NodeJS -->
+                     <div style="width: 220px; animation: floatDown 4s ease-in-out infinite; transition: transform 0.3s;"
+                            onmouseover="this.style.transform='scale(1.1)'"
+                            onmouseout="this.style.transform='scale(1)'">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                                   alt="NodeJS"
+                                   style="width: 150px; height: 150px; animation: glowPulse 2s infinite;" />
+                            <p style="font-size: 1.3rem; font-weight: bold; margin: 0;">Node.js</p>
+                            <p style="font-size: 0.95rem; color: #cccccc;">JavaScript runtime used to run backend code
+                                   on the server.</p>
+                     </div>
+
+              </div>
+
+              <!-- Animation CSS -->
+              <style>
+                     @keyframes floatUp {
+                            0% {
+                                   transform: translateY(0);
+                            }
+
+                            50% {
+                                   transform: translateY(-10px);
+                            }
+
+                            100% {
+                                   transform: translateY(0);
+                            }
+                     }
+
+                     @keyframes floatDown {
+                            0% {
+                                   transform: translateY(0);
+                            }
+
+                            50% {
+                                   transform: translateY(10px);
+                            }
+
+                            100% {
+                                   transform: translateY(0);
+                            }
+                     }
+
+                     @keyframes glowPulse {
+
+                            0%,
+                            100% {
+                                   filter: drop-shadow(0 0 5px #00ffcc);
+                            }
+
+                            50% {
+                                   filter: drop-shadow(0 0 25px #00ffcc);
+                            }
+                     }
+
+                     @keyframes fadeIn {
+                            from {
+                                   opacity: 0;
+                                   transform: translateY(-20px);
+                            }
+
+                            to {
+                                   opacity: 1;
+                                   transform: translateY(0);
+                            }
+                     }
+              </style>
+
+              <div class="nav-buttons">
+                     <button onclick="window.open('page7.html', '_blank')">⟵ Previous</button>
+                     <button onclick="window.open('page9.html', '_blank')">Next ⟶</button>
+              </div>
+
+              <script>
+
+
+                     const canvas = document.getElementById('network');
+                     const ctx = canvas.getContext('2d');
+                     canvas.width = window.innerWidth;
+                     canvas.height = window.innerHeight;
+
+                     const nodes = Array.from({ length: 100 }, () => ({
+                            x: Math.random() * canvas.width,
+                            y: Math.random() * canvas.height,
+                            vx: (Math.random() - 0.5) * 1,
+                            vy: (Math.random() - 0.5) * 1
+                     }));
+
+                     function draw() {
+                            ctx.clearRect(0, 0, canvas.width, canvas.height);
+                            ctx.fillStyle = 'rgba(0, 0, 50, 0.5)';
+                            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                            nodes.forEach((node, i) => {
+                                   node.x += node.vx;
+                                   node.y += node.vy;
+                                   if (node.x < 0 || node.x > canvas.width) node.vx *= -1;
+                                   if (node.y < 0 || node.y > canvas.height) node.vy *= -1;
+
+                                   ctx.beginPath();
+                                   ctx.arc(node.x, node.y, 3, 0, Math.PI * 2);
+                                   ctx.fillStyle = '#ffffff';
+                                   ctx.fill();
+
+                                   for (let j = i + 1; j < nodes.length; j++) {
+                                          const other = nodes[j];
+                                          const dx = node.x - other.x;
+                                          const dy = node.y - other.y;
+                                          const dist = Math.sqrt(dx * dx + dy * dy);
+                                          if (dist < 100) {
+                                                 ctx.beginPath();
+                                                 ctx.moveTo(node.x, node.y);
+                                                 ctx.lineTo(other.x, other.y);
+                                                 ctx.strokeStyle = 'rgba(255, 0, 204, 0.5)';
+                                                 ctx.stroke();
+                                          }
+                                   }
+                            });
+
+                            requestAnimationFrame(draw);
+                     }
+                     draw();
+              </script>
+</body>

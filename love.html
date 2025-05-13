@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Romantic Web Form</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: linear-gradient(to bottom, #ffafbd, #ffc3a0);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      position: relative;
+    }
+
+    .form-container {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+      max-width: 90%;
+      width: 400px;
+      text-align: center;
+    }
+
+    .form-container h2 {
+      color: #e91e63;
+      margin-bottom: 1rem;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 0.5rem 0;
+      border: 1px solid #e91e63;
+      border-radius: 10px;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: #e91e63;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #d81b60;
+    }
+
+    /* Falling Hearts */
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png') no-repeat center/contain;
+      animation: fall linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-50px) rotate(0deg);
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .form-container {
+        width: 90%;
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Love Message 💌</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="text" placeholder="Your Partner's Name" required>
+      <textarea rows="4" placeholder="Write your romantic message here..." required></textarea>
+      <button type="submit">Send with Love ❤️</button>
+    </form>
+  </div>
+
+  <!-- Generate falling hearts -->
+  <script>
+    const heartCount = 30;
+    for (let i = 0; i < heartCount; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = 2 + Math.random() * 3 + 's';
+      heart.style.animationDelay = Math.random() * 5 + 's';
+      document.body.appendChild(heart);
+    }
+  </script>
+
+</body>
+</html>
