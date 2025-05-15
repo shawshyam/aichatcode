@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,17 +13,18 @@
             background-color: #333;
             color: #fff;
             text-align: center;
-            font-size: 16px; 
+            font-size: 16px;
         }
 
         .left-panel {
             width: 30%;
             padding: 20px;
             background-color: #444;
-            font-size: 1.1em; 
+            font-size: 1.1em;
         }
 
-        .left-panel h2, .left-panel ul {
+        .left-panel h2,
+        .left-panel ul {
             text-align: center;
         }
 
@@ -38,34 +40,86 @@
         video {
             width: 80%;
             max-width: 600px;
-            border: 5px solid; /* इनिशियल बॉर्डर */
-            animation: glitch-border 2s infinite alternate; /* बॉर्डर एनिमेशन */
+            border: 5px solid;
+            /* इनिशियल बॉर्डर */
+            animation: glitch-border 2s infinite alternate;
+            /* बॉर्डर एनिमेशन */
         }
 
         @keyframes glitch-border {
-            0% { border-color: #ff00ff; } /* मैजेंटा */
-            25% { border-color: #00ffff; } /* सायन */
-            50% { border-color: #ffff00; } /* पीला */
-            75% { border-color: #00ff00; } /* हरा */
-            100% { border-color: #ff00ff; } /* वापस मैजेंटा */
+            0% {
+                border-color: #ff00ff;
+            }
+
+            /* मैजेंटा */
+            25% {
+                border-color: #00ffff;
+            }
+
+            /* सायन */
+            50% {
+                border-color: #ffff00;
+            }
+
+            /* पीला */
+            75% {
+                border-color: #00ff00;
+            }
+
+            /* हरा */
+            100% {
+                border-color: #ff00ff;
+            }
+
+            /* वापस मैजेंटा */
         }
 
         .fullscreen-button {
-            margin-top: 15px; /* थोड़ा और मार्जिन */
-            padding: 12px 24px; /* बटन का पैडिंग बढ़ाया */
+            margin-top: 15px;
+            /* थोड़ा और मार्जिन */
+            padding: 12px 24px;
+            /* बटन का पैडिंग बढ़ाया */
             background-color: #007bff;
             color: white;
             border: none;
             cursor: pointer;
             border-radius: 5px;
-            font-size: 1em; /* बटन के टेक्स्ट का साइज़ */
+            font-size: 1em;
+            /* बटन के टेक्स्ट का साइज़ */
         }
 
         .fullscreen-button:hover {
             background-color: #0056b3;
         }
+
+        .nav-buttons {
+            position: fixed;
+            bottom: 10px;
+            left: 0;
+            width: 96%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 30px;
+            z-index: 10;
+        }
+
+        .nav-buttons button {
+            background-color: rgba(105, 158, 6, 0.2);
+            color: #ffffff;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .nav-buttons button:hover {
+            background-color: rgba(235, 7, 7, 0.4);
+        }
     </style>
 </head>
+
 <body>
 
     <div class="left-panel">
@@ -80,6 +134,11 @@
     <div class="right-panel">
         <video id="myVideo" src="report.mp4" autoplay loop controls></video>
         <button class="fullscreen-button" onclick="toggleFullScreen()">Full Screen</button>
+    </div>
+
+    <div class="nav-buttons">
+        <button onclick="window.open('page10.html', 'blank')">⟵ Previous</button>
+        <button onclick="window.open('page12.html', 'blank')">Next ⟶</button>
     </div>
 
     <script>
@@ -98,4 +157,5 @@
     </script>
 
 </body>
+
 </html>
