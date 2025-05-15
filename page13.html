@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+       <meta charset="UTF-8" />
+       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+       <title>Challenges Faced</title>
+       <style>
+              * {
+                     margin: 0;
+                     padding: 0;
+                     box-sizing: border-box;
+              }
+
+              body {
+                     font-family: 'Segoe UI', sans-serif;
+                     overflow: hidden;
+                     background: #0d0d0d;
+                     color: white;
+              }
+
+              canvas {
+                     position: fixed;
+                     top: 0;
+                     left: 0;
+                     z-index: 0;
+              }
+
+              .content {
+                     position: relative;
+                     z-index: 2;
+                     display: flex;
+                     align-items: center;
+                     justify-content: center;
+                     height: 100vh;
+                     padding: 20px;
+              }
+
+              .box {
+                     background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1));
+                     border: 2px solid #00ffff;
+                     box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+                     border-radius: 20px;
+                     padding: 40px;
+                     max-width: 750px;
+                     backdrop-filter: blur(10px);
+              }
+
+              h1 {
+                     font-size: 3em;
+                     margin-bottom: 20px;
+                     color: #00ffff;
+                     text-align: center;
+              }
+
+              ul {
+                     list-style-type: none;
+                     padding-left: 0;
+              }
+
+              ul li {
+                     margin-bottom: 20px;
+              }
+
+              .point-title {
+                     font-size: 1.4em;
+                     font-weight: bold;
+                     color: #00ffe5;
+              }
+
+              .point-desc {
+                     font-size: 1.1em;
+                     margin-top: 5px;
+                     color: #e0e0e0;
+              }
+
+              .cube {
+                     position: absolute;
+                     top: 10%;
+                     right: 5%;
+                     width: 100px;
+                     height: 100px;
+                     transform-style: preserve-3d;
+                     animation: rotateCube 10s infinite linear;
+                     z-index: 2;
+              }
+
+              .cube div {
+                     position: absolute;
+                     width: 100px;
+                     height: 100px;
+                     background: rgba(0, 255, 255, 0.3);
+                     border: 2px solid #ff00ff;
+              }
+
+              .cube .front {
+                     transform: translateZ(50px);
+              }
+
+              .cube .back {
+                     transform: rotateY(180deg) translateZ(50px);
+              }
+
+              .cube .right {
+                     transform: rotateY(90deg) translateZ(50px);
+              }
+
+              .cube .left {
+                     transform: rotateY(-90deg) translateZ(50px);
+              }
+
+              .cube .top {
+                     transform: rotateX(90deg) translateZ(50px);
+              }
+
+              .cube .bottom {
+                     transform: rotateX(-90deg) translateZ(50px);
+              }
+
+              @keyframes rotateCube {
+                     from {
+                            transform: rotateX(0deg) rotateY(0deg);
+                     }
+
+                     to {
+                            transform: rotateX(360deg) rotateY(360deg);
+                     }
+              }
+
+              .nav-buttons {
+                     position: fixed;
+                     bottom: 10px;
+                     left: 0;
+                     width: 96%;
+                     display: flex;
+                     justify-content: space-between;
+                     padding: 0 30px;
+                     z-index: 10;
+              }
+
+              .nav-buttons button {
+                     background-color: rgba(105, 158, 6, 0.2);
+                     color: #ffffff;
+                     border: none;
+                     border-radius: 10px;
+                     padding: 10px 20px;
+                     font-size: 1rem;
+                     cursor: pointer;
+                     transition: background 0.3s;
+              }
+
+              .nav-buttons button:hover {
+                     background-color: rgba(235, 7, 7, 0.4);
+              }
+       </style>
+</head>
+
+<body>
+       <canvas id="bg"></canvas>
+
+       <div class="content">
+              <div class="box">
+                     <h1>Challenges Faced</h1>
+                     <ul>
+                            <li>
+                                   <div class="point-title">1. Integrating real-time chat and AI smoothly</div>
+                                   <div class="point-desc">Ensuring that chat messages are transmitted instantly while
+                                          the AI responds seamlessly, without lag or confusion, was a key challenge
+                                          requiring WebSockets and async logic coordination.</div>
+                            </li>
+                            <li>
+                                   <div class="point-title">2. Managing async API calls</div>
+                                   <div class="point-desc">Multiple asynchronous calls to the AI and backend had to be
+                                          carefully managed to prevent race conditions, delays, or unexpected UI
+                                          behavior.</div>
+                            </li>
+                            <li>
+                                   <div class="point-title">3. Handling invalid prompts</div>
+                                   <div class="point-desc">Some user prompts were vague, offensive, or technically
+                                          invalid. Creating a proper error handling and feedback mechanism for these
+                                          cases was important for UX and AI performance.</div>
+                            </li>
+                            <li>
+                                   <div class="point-title">4. Making UI user-friendly</div>
+                                   <div class="point-desc">Designing a layout that is clean, responsive, and intuitive
+                                          required several iterations with feedback from users to optimize user
+                                          engagement.</div>
+                            </li>
+                            <li>
+                                   <div class="point-title">5. Data storage structure in MongoDB</div>
+                                   <div class="point-desc">Structuring messages, users, and AI response data in MongoDB
+                                          collections in a scalable and efficient way was critical for future
+                                          performance and analytics.</div>
+                            </li>
+                     </ul>
+              </div>
+       </div>
+
+       <div class="cube">
+              <div class="front"></div>
+              <div class="back"></div>
+              <div class="right"></div>
+              <div class="left"></div>
+              <div class="top"></div>
+              <div class="bottom"></div>
+       </div>
+
+       <div class="nav-buttons">
+              <button onclick="window.open('page12.html', 'blank')">⟵ Previous</button>
+              <button onclick="window.open('page12.html', 'blank')">Next ⟶</button>
+       </div>
+
+       <script>
+              const canvas = document.getElementById('bg');
+              const ctx = canvas.getContext('2d');
+
+              canvas.width = window.innerWidth;
+              canvas.height = window.innerHeight;
+
+              let particlesArray = [];
+              const numberOfParticles = 100;
+
+              class Particle {
+                     constructor() {
+                            this.x = Math.random() * canvas.width;
+                            this.y = Math.random() * canvas.height;
+                            this.size = Math.random() * 2 + 1;
+                            this.speedX = Math.random() * 1 - 0.5;
+                            this.speedY = Math.random() * 1 - 0.5;
+                     }
+
+                     update() {
+                            this.x += this.speedX;
+                            this.y += this.speedY;
+                            if (this.x < 0 || this.x > canvas.width) this.speedX = -this.speedX;
+                            if (this.y < 0 || this.y > canvas.height) this.speedY = -this.speedY;
+                     }
+
+                     draw() {
+                            ctx.fillStyle = '#00ffff';
+                            ctx.beginPath();
+                            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                            ctx.fill();
+                     }
+              }
+
+              function init() {
+                     particlesArray = [];
+                     for (let i = 0; i < numberOfParticles; i++) {
+                            particlesArray.push(new Particle());
+                     }
+              }
+
+              function connect() {
+                     for (let a = 0; a < particlesArray.length; a++) {
+                            for (let b = a; b < particlesArray.length; b++) {
+                                   let dx = particlesArray[a].x - particlesArray[b].x;
+                                   let dy = particlesArray[a].y - particlesArray[b].y;
+                                   let distance = dx * dx + dy * dy;
+                                   if (distance < 10000) {
+                                          ctx.strokeStyle = '#00ffff';
+                                          ctx.lineWidth = 0.2;
+                                          ctx.beginPath();
+                                          ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                                          ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                                          ctx.stroke();
+                                   }
+                            }
+                     }
+              }
+
+              function animate() {
+                     ctx.clearRect(0, 0, canvas.width, canvas.height);
+                     particlesArray.forEach(p => {
+                            p.update();
+                            p.draw();
+                     });
+                     connect();
+                     requestAnimationFrame(animate);
+              }
+
+              window.addEventListener('resize', () => {
+                     canvas.width = window.innerWidth;
+                     canvas.height = window.innerHeight;
+                     init();
+              });
+
+              init();
+              animate();
+       </script>
+</body>
+
+</html>

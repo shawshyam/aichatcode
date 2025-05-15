@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Future Scope</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #1a1a2e);
+      background-size: 400% 400%;
+      animation: gradient 10s ease infinite;
+      color: white;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 700px;
+      width: 90%;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    h1 {
+      font-size: 2.8em;
+      margin-bottom: 30px;
+      color: #00ffff;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+    }
+
+    li {
+      margin-bottom: 20px;
+      font-size: 1.3em;
+      padding-left: 25px;
+      position: relative;
+    }
+
+    li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #00ffcc;
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Future Scope</h1>
+    <ul>
+      <li>Media sharing (images, files, audio)</li>
+      <li>Voice-based AI prompts</li>
+      <li>Admin controls & group permissions</li>
+      <li>Multi-language AI response</li>
+      <li>Mobile App version with React Native</li>
+    </ul>
+  </div>
+</body>
+</html>
